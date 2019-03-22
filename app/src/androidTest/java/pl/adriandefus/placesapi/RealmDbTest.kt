@@ -69,10 +69,9 @@ class RealmDbTest {
     fun shouldGetAllPlaceInformationInRealm() {
         realm.executeTransaction {
             //given
-            val expectedSizeOfPlaceInformationInDb = 2
-
             it.createObject(PlaceInformation::class.java, placeInformationMock.id)
             it.createObject(PlaceInformation::class.java, UUID.randomUUID().toString())
+            val expectedSizeOfPlaceInformationInDb = 2
 
             //when
             val actualSizeOfPlaceInformationMockInDb = it.where(PlaceInformation::class.java).findAll().size
@@ -127,7 +126,7 @@ class RealmDbTest {
             it.createObject(PlaceInformation::class.java, placeInformationMock.id)
             it.createObject(PlaceInformation::class.java, UUID.randomUUID().toString())
             it.createObject(PlaceInformation::class.java, UUID.randomUUID().toString())
-            val expectedSizeOfPlacesInformationTable = 1
+            val expectedSizeOfPlacesInformationTable = 2
 
             //when
             val placeInformationRealmResults =
