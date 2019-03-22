@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PlacesApiTest</string>
+
+    <string name="favourite_places">Favourite places</string>
+    <string name="no_favourite_places_info">No places marked as favourites yet</string>
+    <string name="no_places_for_query">No places found for specified query</string>
+    <string name="error_adding_place_to_favourites">Error adding place to favourites</string>
+    <string name="error_removing_place_from_favourites">Error removing place from favourites</string>
+    <string name="error_obtaining_place_information">Error obtaining point information</string>
+</resources>

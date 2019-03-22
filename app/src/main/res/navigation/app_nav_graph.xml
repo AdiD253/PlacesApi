@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/app_nav_graph"
+            app:startDestination="@id/predictionsFragment">
+
+    <fragment
+            android:id="@+id/predictionsFragment"
+            tools:layout="@layout/fragment_predictions"
+            android:name="pl.adriandefus.placesapi.ui.fragment.predictions.PredictionsFragment"
+            android:label="PredictionsFragment">
+        <action
+                android:id="@+id/actionOpenMapFragmentFromPredictions"
+                app:destination="@id/mapFragment">
+            <argument
+                android:name="place_id"
+                app:argType="string" />
+        </action>
+        <action
+                android:id="@+id/actionOpenFavouritesFragment"
+                app:destination="@id/favouritesFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/mapFragment"
+            tools:layout="@layout/fragment_map"
+            android:name="pl.adriandefus.placesapi.ui.fragment.MapFragment"
+            android:label="MapFragment">
+        <argument android:name="place_id"/>
+    </fragment>
+    <fragment
+            android:id="@+id/favouritesFragment"
+            tools:layout="@layout/fragment_favourites"
+            android:name="pl.adriandefus.placesapi.ui.fragment.favourites.FavouritesFragment"
+            android:label="FavouritesFragment">
+        <action
+                android:id="@+id/actionOpenMapFragmentFromFavourites"
+                app:destination="@id/mapFragment"/>
+    </fragment>
+</navigation>
